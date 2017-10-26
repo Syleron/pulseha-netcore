@@ -24,7 +24,7 @@ import (
 
 type PulseNetCore bool
 
-const PluginName = "Pulse-HTTP"
+const PluginName = "PulseHA-NetCore"
 const PluginVersion = 1.0
 
 /**
