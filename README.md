@@ -1,3 +1,4 @@
+[![Build Status](https://semaphoreci.com/api/v1/syleron/pulseha-netcore/branches/master/shields_badge.svg)](https://semaphoreci.com/syleron/pulseha-netcore)
 ## About
 PulseHA default core networking plugin that brings up/down floating IP addresses.
 
