@@ -20,6 +20,7 @@ package main
 import (
 	"github.com/Syleron/PulseHA/src/netUtils"
 	"errors"
+	"github.com/Syleron/PulseHA/src/utils"
 )
 
 type PulseNetCore bool
@@ -49,7 +50,11 @@ func (e PulseNetCore) BringUpIPs(iface string, ips []string) error {
 		} else if success && err != nil {
 			return err
 		}
-		go netUtils.SendGARP(iface, ip)
+		if utils.IsIPv6(ip) {
+			go netUtils.IPv6NDP(iface)
+		} else {
+			go netUtils.SendGARP(iface, ip)
+		}
 	}
 	return nil
 }
