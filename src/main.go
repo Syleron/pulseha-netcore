@@ -18,9 +18,9 @@
 package main
 
 import (
-	"github.com/Syleron/PulseHA/src/netUtils"
 	"errors"
 	"github.com/Syleron/PulseHA/src/utils"
+	"github.com/Syleron/PulseHA/src/net_utils"
 )
 
 type PulseNetCore bool
@@ -44,16 +44,16 @@ func (e PulseNetCore) Version() float64 {
 
 func (e PulseNetCore) BringUpIPs(iface string, ips []string) error {
 	for _, ip := range ips {
-		success, err := netUtils.BringIPup(iface, ip)
+		success, err := net_utils.BringIPup(iface, ip)
 		if !success && err != nil {
 			return err
 		} else if success && err != nil {
 			return err
 		}
 		if utils.IsIPv6(ip) {
-			go netUtils.IPv6NDP(iface)
+			go net_utils.IPv6NDP(iface)
 		} else {
-			go netUtils.SendGARP(iface, ip)
+			go net_utils.SendGARP(iface, ip)
 		}
 	}
 	return nil
@@ -61,7 +61,7 @@ func (e PulseNetCore) BringUpIPs(iface string, ips []string) error {
 
 func (e PulseNetCore) BringDownIPs(iface string, ips []string) error {
 	for _, ip := range ips {
-		success, err := netUtils.BringIPdown(iface, ip)
+		success, err := net_utils.BringIPdown(iface, ip)
 		if err != nil {
 			return err
 		}
