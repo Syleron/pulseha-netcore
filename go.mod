@@ -8,4 +8,4 @@ replace (
 	github.com/Sirupsen/logrus v1.4.0 => github.com/sirupsen/logrus v1.0.6
 )
 
-require github.com/syleron/pulseha v1.1.4
+require github.com/syleron/pulseha v1.1.5
