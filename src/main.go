@@ -19,8 +19,8 @@ package main
 
 import (
 	"errors"
-	"github.com/Syleron/PulseHA/src/utils"
-	"github.com/Syleron/PulseHA/src/netUtils"
+	"github.com/syleron/pulseha/src/netUtils"
+	"github.com/syleron/pulseha/src/utils"
 )
 
 type PulseNetCore bool
@@ -73,4 +73,3 @@ func (e PulseNetCore) BringDownIPs(iface string, ips []string) error {
 }
 
 var PluginNet PulseNetCore
-

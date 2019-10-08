@@ -1,4 +1,4 @@
-module github.com/Syleron/PulseHA-NetCore
+module github.com/syleron/pulseha-netcore
 
 go 1.12
 
@@ -8,4 +8,4 @@ replace (
 	github.com/Sirupsen/logrus v1.4.0 => github.com/sirupsen/logrus v1.0.6
 )
 
-require github.com/Syleron/PulseHA v1.1.1
+require github.com/syleron/pulseha v1.1.3
